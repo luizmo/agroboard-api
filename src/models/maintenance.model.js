@@ -17,6 +17,9 @@ module.exports = function (app) {
   });
 
   maintenance.associate = function (models) {
+    const {machines, machine_part} = models;
+    maintenance.belongsTo(machines);
+    maintenance.belongsToMany(machine_part, {as: 'maintenance', through: 'maintenance_part', onDelete: 'NO ACTION'});
   };
 
   return maintenance;

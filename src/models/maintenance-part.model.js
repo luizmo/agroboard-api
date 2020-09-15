@@ -14,6 +14,9 @@ module.exports = function (app) {
   });
 
   maintenancePart.associate = function (models) {
+    const {machine_part, maintenance } = models;
+   // maintenancePart.(machine_part);
+    maintenancePart.belongsTo(maintenance);
   };
 
   return maintenancePart;

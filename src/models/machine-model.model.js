@@ -21,6 +21,8 @@ module.exports = function (app) {
   });
 
   machineModel.associate = function (models) {
+    const { machines } = models;
+    machineModel.hasMany(machines);
   };
 
   return machineModel;

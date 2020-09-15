@@ -25,6 +25,8 @@ module.exports = function (app) {
   });
 
   part.associate = function (models) {
+    const { machine_part } = models;
+    part.hasMany(machine_part);
   };
 
   return part;
