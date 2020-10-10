@@ -11,7 +11,10 @@ module.exports = {
     get: [],
     create: [],
     update: [],
-    patch: [],
+    patch: [ (context) => {
+      const machineId = context.id;
+      const parts = context.data.parts;
+    }],
     remove: []
   },
 

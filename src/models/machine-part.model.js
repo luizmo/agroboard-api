@@ -14,7 +14,7 @@ module.exports = function (app) {
       allowNull: false
     },
     emUtilizacao:{
-        type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN
     }
   }, {
     hooks: {

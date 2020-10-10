@@ -2,6 +2,10 @@
 const createModel = require('../../models/machine-part.model');
 
 module.exports = function (app) {
-  createModel(app)
+  const options = {
+    Model: createModel(app),
+    paginate: app.get('paginate')
+  };
 
+  const service = app.service('machine-part');
 };
