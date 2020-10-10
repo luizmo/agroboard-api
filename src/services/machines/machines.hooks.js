@@ -1,6 +1,12 @@
 module.exports = {
   before: {
-    all: [],
+    all: [
+      (hook) => {
+        hook.params.sequelize = {
+          include: [{ model: hook.app.services['machine-model'].Model }]
+       };
+      }
+    ],
     find: [],
     get: [],
     create: [],
